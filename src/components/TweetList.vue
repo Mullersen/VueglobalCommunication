@@ -23,7 +23,7 @@ export default {
     methods:{
         toggleClass: function(){
             this.toggleState = true;
-            if(!this.toggleState){
+            if(!this.toggleState){ // something is wrong here
                 this.toggleState = false;
             }
            //change the togglestate to true -- look back a week or so. 
