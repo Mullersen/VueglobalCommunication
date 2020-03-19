@@ -1,10 +1,9 @@
 <template>
-    <div class="tweetGrid">
+    <div class="tweetList" v-bind:class="{ tweetGrid: toggleState }">
         <Tweet v-for='tweet in tweets'
         v-bind:key="tweet.content"
         v-bind:author="tweet.author"
         v-bind:content="tweet.content"
-        v-bind:class="{ tweetGrid: toggleState }"
         />
   </div>
 </template>
@@ -22,9 +21,10 @@ export default {
     },
     methods:{
         toggleClass: function(){
-            this.toggleState = true;
-            if(!this.toggleState){ // something is wrong here
+            if(this.toggleState == true){ // something is wrong here
                 this.toggleState = false;
+            } else {
+                this.toggleState = true;
             }
            //change the togglestate to true -- look back a week or so. 
         }
